@@ -90,4 +90,5 @@ mysql -u root -p cellphoneS < data/database/db.sql
 
   GitHub Repository: https://github.com/DuySon0802/Electro-E-commerce-Platform
 
-Developed by Đào Duy Sơn | 2026
+---
+*Developed by [Đào Duy Sơn](https://github.com/DuySon0802) | 2026*
