@@ -1,0 +1,38 @@
+package com.linh.web.controller.web;
+
+import java.io.IOException;
+
+import com.linh.web.dto.response.UserResponse;
+import com.linh.web.service.CartService;
+
+import jakarta.servlet.ServletException;
+import jakarta.servlet.annotation.WebServlet;
+import jakarta.servlet.http.HttpServlet;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
+
+@WebServlet(name = "Cart", value = "/cart")
+public class CartController extends HttpServlet {
+
+	private CartService cartService;
+
+	@Override
+	public void init() throws ServletException {
+		cartService = new CartService();
+	}
+
+	public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		response.sendRedirect(request.getContextPath() + "/cart");
+	}
+
+	public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		HttpSession session = request.getSession(false);
+		UserResponse user = session == null ? null : (UserResponse) session.getAttribute("account");
+		if (user != null) {
+			session.setAttribute("cart", cartService.getCartItems(user.getId()));
+		}
+		request.getRequestDispatcher("views/pages/cart.jsp").forward(request, response);
+	}
+
+}

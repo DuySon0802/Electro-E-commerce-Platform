@@ -1,0 +1,30 @@
+package com.linh.web.dto.response;
+
+
+import lombok.*;
+
+import java.util.Date;
+import java.util.List;
+
+@Getter
+@Setter
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
+public class ProductResponse {
+    private Long id;
+    private String name;
+    private String description;
+    private  String detail;
+    private  String summary;
+    private String category;
+    private String brand;
+    private Double price;
+    private List<String> imageUrl;
+    private Long promotion;
+    private Long quantity;
+    private Double reviewScore;
+    private Date createdAt;
+    private Boolean deleted;
+
+}

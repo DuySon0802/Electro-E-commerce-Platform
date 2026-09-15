@@ -1,0 +1,29 @@
+package com.linh.web.model;
+
+import lombok.*;
+
+import java.util.Date;
+
+@Getter
+@Setter
+@Builder
+@AllArgsConstructor
+@NoArgsConstructor
+public class User {
+	private Long id;
+	private String username;
+	private String password;
+	private String firstName;
+	private String lastName;
+	private Role role;
+	private String avtUrl;
+	private  String phone;
+	private String email;
+	private String status;
+	private Boolean verified;
+	private Boolean phoneVerified;
+	private Boolean deleted;
+	private Date lastLogin;
+	private Date createdAt;
+	private Date updatedAt;
+}
