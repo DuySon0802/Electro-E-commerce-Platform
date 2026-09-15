@@ -81,12 +81,12 @@ mysql -u root -p cellphoneS < data/database/db.sql
 
   Khởi chạy server và truy cập hệ thống tại: http://localhost:8080/
 
-📧 Liên Hệ (Contact)
+## 📧 Liên Hệ (Contact)
   Software Engineer: Đào Duy Sơn
 
-  Số điện thoại: [Điền SĐT của bạn]
+  Số điện thoại: 0333686064
 
-  Email: [Điền Email của bạn]
+  Email: duyson0802@gmail.com
 
   GitHub Repository: https://github.com/DuySon0802/Electro-E-commerce-Platform
 
