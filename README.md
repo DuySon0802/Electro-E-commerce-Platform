@@ -51,41 +51,43 @@ electro/
 └── README.md               # Tài liệu dự án
 
 ```
-🚀 Hướng Dẫn Cài Đặt (Local Development)
-1. Yêu cầu hệ thống
-Java JDK 21
+## 🚀 Hướng Dẫn Cài Đặt (Local Development)
 
-MySQL Server 8.0+
+### 1. Yêu cầu hệ thống
+*   **Java JDK 21**
+*   **MySQL Server 8.0+**
+*   **Apache Tomcat 10.1+**
+*   **IntelliJ IDEA** (Khuyến nghị)
 
-Apache Tomcat 10.1+
-
-IntelliJ IDEA (Khuyến nghị)
-
-2. Khởi tạo Cơ sở dữ liệu
+### 2. Khởi tạo Cơ sở dữ liệu
 Thiết lập database thông qua MySQL CLI hoặc công cụ quản lý (Workbench/DBeaver):
+
+```sql
 CREATE DATABASE cellphoneS CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
-
+```
 Import dữ liệu mẫu từ thư mục dự án:
+```text
 mysql -u root -p cellphoneS < data/database/db.sql
+```
 
-3. Cấu hình Kết nối & Chạy dự án
-Mở tệp src/main/java/com/electro/web/util/JDBCUtils.java và cập nhật thông tin tài khoản MySQL cục bộ (USER và PASSWORD).
+### 3. Cấu hình Kết nối & Chạy dự án
+  Mở tệp src/main/java/com/electro/web/util/JDBCUtils.java và cập nhật thông tin tài khoản MySQL cục bộ (USER và PASSWORD).
 
-Mở dự án bằng IntelliJ IDEA, chờ Maven tải hoàn tất các dependencies.
+  Mở dự án bằng IntelliJ IDEA, chờ Maven tải hoàn tất các dependencies.
 
-Thiết lập Project SDK là Java 21.
+  Thiết lập Project SDK là Java 21.
 
-Cấu hình Tomcat Server (Local) trong tab Run/Debug Configurations. Đặt Application context là / tại tab Deployment.
+  Cấu hình Tomcat Server (Local) trong tab Run/Debug Configurations. Đặt Application context là / tại tab Deployment.
 
-Khởi chạy server và truy cập hệ thống tại: http://localhost:8080/
+  Khởi chạy server và truy cập hệ thống tại: http://localhost:8080/
 
 📧 Liên Hệ (Contact)
-Software Engineer: Đào Duy Sơn
+  Software Engineer: Đào Duy Sơn
 
-Số điện thoại: 0333686064
+  Số điện thoại: [Điền SĐT của bạn]
 
-Email: duyson0802@gmail.com
+  Email: [Điền Email của bạn]
 
-GitHub Repository: https://github.com/DuySon0802/Electro-E-commerce-Platform
+  GitHub Repository: https://github.com/DuySon0802/Electro-E-commerce-Platform
 
 Developed by Đào Duy Sơn | 2026
