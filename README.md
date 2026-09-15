@@ -1,124 +1,90 @@
-# 🛒 Electro - Website Thương Mại Điện Tử Thiết Bị Công Nghệ
+# 🛒 Electro - Enterprise E-commerce Platform
 
-**Electro** là hệ thống ứng dụng web thương mại điện tử chuyên nghiệp kinh doanh các sản phẩm thiết bị công nghệ, điện tử (Điện thoại, Laptop, Máy ảnh, Phụ kiện...). Ứng dụng được thiết kế theo kiến trúc MVC tối ưu, sử dụng công nghệ **Java Web (Servlet/JSP)**, **Jakarta EE**, **JDBC** và **MySQL Database**.
-
----
-
-## 🌟 Tính Năng Nổi Bật
-
-### 🛒 Dành Cho Khách Hàng (Storefront)
-
-- **Trang chủ & Danh mục sản phẩm**: Hiển thị sản phẩm hot, khuyến mãi, tìm kiếm & lọc theo giá, thương hiệu, loại sản phẩm.
-- **Chi tiết sản phẩm**: Xem chi tiết thông số, tình trạng tồn kho, đánh giá xếp hạng sao và bình luận.
-- **Giỏ hàng & Thanh toán**: Quản lý giỏ hàng trực quan, tính toán tự động tổng tiền, giảm giá và tiến hành đặt hàng.
-- **Tài khoản người dùng**: Đăng ký, đăng nhập, quản lý thông tin cá nhân và xem lịch sử đơn hàng.
-- **Yêu thích & So sánh**: Thêm sản phẩm yêu thích và so sánh các thông số sản phẩm.
-
-### 🛡️ Dành Cho Quản Trị Viên (Admin Dashboard)
-
-- **Tổng quan (Dashboard)**: Thống kê doanh thu, tổng số đơn hàng, khách hàng mới và biểu đồ kinh doanh.
-- **Quản lý sản phẩm & Tồn kho**: Thêm/Sửa/Xóa sản phẩm, cập nhật số lượng tồn kho và khuyến mãi.
-- **Quản lý đơn hàng**: Theo dõi trạng thái đơn hàng (Chờ xử lý, Đã xác nhận, Đang giao, Đã giao, Hủy).
-- **Quản lý người dùng & Đánh giá**: Phân quyền hệ thống (Admin, User), duyệt hoặc ẩn bình luận/đánh giá.
-- **Xuất báo cáo (Export)**: Xuất báo cáo doanh thu và bán hàng ra file **Excel (.xlsx)** và **PDF**.
+**Electro** là hệ thống thương mại điện tử chuyên biệt phân phối các thiết bị công nghệ và điện tử. Ứng dụng được xây dựng trên nền tảng **Java Web (Jakarta EE)**, tuân thủ nghiêm ngặt **kiến trúc MVC**, tối ưu hóa truy vấn **JDBC** và tích hợp các giải pháp hiện đại nhằm mang lại hiệu suất cao và trải nghiệm người dùng liền mạch.
 
 ---
 
-## 🛠️ Công Nghệ Sử Dụng
+## 🌟 Điểm Nhấn Kỹ Thuật (Technical Highlights)
 
-- **Backend**: Java 21, Servlet (Jakarta EE 10), JSP / JSTL, JDBC.
-- **Database**: MySQL 8.x (Truy vấn tối ưu, hỗ trợ UTF-8 Unicode full).
-- **Frontend**: HTML5, CSS3, JavaScript (jQuery, AJAX), Bootstrap, FontAwesome 4.7.
-- **Build Tool**: Apache Maven 3.x.
-- **Server Application**: Apache Tomcat 10.1+.
+Dự án không chỉ dừng lại ở các tính năng bán hàng cơ bản mà còn tập trung giải quyết các bài toán về vận hành và luồng dữ liệu:
+
+*   **Tích hợp Trí tuệ nhân tạo (AI Chatbot):** Xây dựng luồng giao tiếp dữ liệu để tích hợp AI Chatbot, tự động phân tích ngữ cảnh và gợi ý sản phẩm phù hợp cho khách hàng.
+*   **Xử lý RESTful API & AJAX:** Áp dụng tư duy API cho các module thay đổi trạng thái liên tục (Quản lý giỏ hàng, Thêm sản phẩm yêu thích) giúp thao tác mượt mà không cần tải lại trang.
+*   **Hệ thống Phân quyền (RBAC):** Xây dựng cơ chế Role-Based Access Control chặt chẽ, tách biệt hoàn toàn luồng nghiệp vụ giữa Khách hàng (Storefront) và Quản trị viên (Admin Dashboard).
+*   **Xử lý Báo cáo Tự động (Data Export):** Phát triển module tự động trích xuất dữ liệu doanh thu và vòng đời đơn hàng ra các định dạng chuẩn doanh nghiệp (**Excel .xlsx** và **PDF**).
+*   **Tối ưu hóa Database:** Thiết kế lược đồ cơ sở dữ liệu MySQL chuẩn hóa, xử lý toàn vẹn dữ liệu cho các tính năng đánh giá (Rating) và kiểm soát hàng tồn kho (Inventory Tracking).
 
 ---
 
-## 📂 Cấu Trúc Dự Án
+## 🛠️ Tech Stack & Kiến Trúc
+
+*   **Backend:** Java 21, Servlet (Jakarta EE 10), JSP / JSTL.
+*   **Database:** MySQL 8.x (Tối ưu hóa truy vấn, mã hóa UTF-8 Unicode).
+*   **Frontend:** HTML5, CSS3, JavaScript, jQuery, Bootstrap, FontAwesome.
+*   **Architecture:** MVC Pattern, 3-Tier Architecture.
+*   **Build & Deploy:** Apache Maven 3.x, Apache Tomcat 10.1+.
+
+---
+
+## 📂 Cấu Trúc Dự Án (Project Structure)
 
 ```text
 electro/
 ├── data/
-│   └── database/           # Tệp SQL khởi tạo CSDL & dữ liệu mẫu (db.sql)
+│   └── database/           # Tệp SQL khởi tạo schemas & dữ liệu mẫu (db.sql)
 ├── src/
 │   ├── main/
-│   │   ├── java/com/linh/web/
-│   │   │   ├── api/        # REST APIs xử lý AJAX (Giỏ hàng, Wishlist...)
-│   │   │   ├── controller/ # Servlets điều hướng (Web & Admin)
-│   │   │   ├── dto/        # Data Transfer Objects (Request/Response)
+│   │   ├── java/com/electro/web/
+│   │   │   ├── api/        # REST APIs xử lý logic bất đồng bộ (Cart, Chatbot)
+│   │   │   ├── controller/ # Servlets điều hướng Request/Response
+│   │   │   ├── dto/        # Data Transfer Objects
 │   │   │   ├── model/      # Entity Models (Product, User, Order...)
-│   │   │   ├── repository/ # Tầng truy vấn dữ liệu JDBC DAOs
-│   │   │   ├── service/    # Tầng xử lý nghiệp vụ Business Logic
-│   │   │   └── util/       # Utility helpers (JDBC, Pagination, Exporters)
-│   │   ├── resources/      # Tài nguyên hệ thống & Font chữ
+│   │   │   ├── repository/ # Tầng thao tác dữ liệu (JDBC DAOs)
+│   │   │   ├── service/    # Tầng xử lý nghiệp vụ lõi (Business Logic)
+│   │   │   └── util/       # Utility helpers (Database connection, Exporters)
+│   │   ├── resources/      # Tài nguyên tĩnh cấu hình hệ thống
 │   │   └── webapp/
-│   │       ├── assets/     # Static files (CSS, JS, Images, Fonts)
-│   │       └── views/      # Giao diện JSP (Pages, Commons, Taglibs)
+│   │       ├── assets/     # Static files (CSS, JS, Images)
+│   │       └── views/      # Giao diện JSP được phân mảnh (Pages, Commons)
 │   └── test/               # Unit tests & Integration tests
-├── pom.xml                 # Cấu hình Maven dependencies
-└── README.md               # Tài liệu hướng dẫn dự án
-```
+├── pom.xml                 # Cấu hình quản lý thư viện Maven
+└── README.md               # Tài liệu dự án
 
----
+🚀 Hướng Dẫn Cài Đặt (Local Development)
+1. Yêu cầu hệ thống
+Java JDK 21
 
-## 🚀 Cài Đặt & Chạy Dự Án
+MySQL Server 8.0+
 
-### 1. Yêu cầu môi trường
+Apache Tomcat 10.1+
 
-- **Java JDK 21**
-- **MySQL Server 8.0+**
-- **Apache Tomcat 10.1+**
-- **IntelliJ IDEA** (khuyên dùng) hoặc Eclipse / NetBeans
+IntelliJ IDEA (Khuyến nghị)
 
----
+2. Khởi tạo Cơ sở dữ liệu
+Thiết lập database thông qua MySQL CLI hoặc công cụ quản lý (Workbench/DBeaver):
+CREATE DATABASE cellphoneS CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 
-### 2. Khởi tạo Cơ sở dữ liệu (MySQL)
+Import dữ liệu mẫu từ thư mục dự án:
+mysql -u root -p cellphoneS < data/database/db.sql
 
-1. Mở MySQL Terminal hoặc công cụ quản lý CSDL (MySQL Workbench / DBeaver / Navicat).
-2. Tạo CSDL tên `cellphoneS`:
-   ```sql
-   CREATE DATABASE cellphoneS CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
-   ```
-3. Import tệp SQL khởi tạo dữ liệu tại `data/database/db.sql`:
-   ```bash
-   mysql -u root -p cellphoneS < data/database/db.sql
-   ```
+3. Cấu hình Kết nối & Chạy dự án
+Mở tệp src/main/java/com/electro/web/util/JDBCUtils.java và cập nhật thông tin tài khoản MySQL cục bộ (USER và PASSWORD).
 
----
+Mở dự án bằng IntelliJ IDEA, chờ Maven tải hoàn tất các dependencies.
 
-### 3. Cấu hình Kết Nối Cơ Sở Dữ Liệu
+Thiết lập Project SDK là Java 21.
 
-Mở tệp `src/main/java/com/linh/web/util/JDBCUtils.java` và cập nhật thông tin tài khoản MySQL của bạn:
+Cấu hình Tomcat Server (Local) trong tab Run/Debug Configurations. Đặt Application context là / tại tab Deployment.
 
-```java
-private static final String DB_URL = "jdbc:mysql://localhost:3306/cellphoneS?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC";
-private static final String USER = "root";
-private static final String PASSWORD = "your_mysql_password"; // Điền mật khẩu MySQL local tại đây
-```
+Khởi chạy server và truy cập hệ thống tại: http://localhost:8080/
 
----
+📧 Liên Hệ (Contact)
+Software Engineer: Đào Duy Sơn
 
-### 4. Chạy Ứng Dụng Trên IntelliJ IDEA
+Số điện thoại: 0333686064
 
-1. Mở **IntelliJ IDEA** $\rightarrow$ chọn **Open** $\rightarrow$ trỏ đến thư mục `electro`.
-2. Chờ Maven tải đủ các thư viện phụ thuộc (`dependencies`).
-3. Đảm bảo JDK dự án được thiết lập là **Java 21** (_File -> Project Structure -> Project SDK_).
-4. Cấu hình Run/Debug với Tomcat:
-   - Vào **Run -> Edit Configurations...** $\rightarrow$ Thêm mới **Tomcat Server (Local)**.
-   - Tại tab **Deployment**, thêm artifact `linh:war exploded`.
-   - Đặt **Application context** là `/` (hoặc `/electro`).
-5. Nhấn **Run** (Shift + F10).
-6. Truy cập hệ thống tại: [http://localhost:8080/](http://localhost:8080/)
+Email: duyson0802@gmail.com
 
----
+GitHub Repository: https://github.com/DuySon0802/Electro-E-commerce-Platform
 
-## 📧 Liên Hệ & Hỗ Trợ
-
-- **Tác giả**: Lê Duy Linh (`duylinhdev`)
-- **Số điện thoại**: 0343 859 905
-- **Email**: Lduylinh318@gmail.com
-- **Repository**: [https://github.com/duylinhdev/electro](https://github.com/duylinhdev/electro)
-
----
-
-_Bản quyền &copy; 2026 Electro. Tất cả các quyền được bảo lưu._
+Developed by Đào Duy Sơn | 2026
