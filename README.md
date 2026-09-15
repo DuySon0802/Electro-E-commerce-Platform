@@ -82,7 +82,7 @@ mysql -u root -p cellphoneS < data/database/db.sql
   Khởi chạy server và truy cập hệ thống tại: http://localhost:8080/
 
 ## 📧 Liên Hệ (Contact)
-  Software Engineer: Đào Duy Sơn
+  Author: Đào Duy Sơn
 
   Số điện thoại: 0333686064
 
